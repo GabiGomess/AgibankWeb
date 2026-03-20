@@ -19,4 +19,4 @@ Projeto de automação de testes para a funcionalidade de busca do Blog do Agi, 
 ## 🏗️ Estrutura do Projeto
 - `cypress/e2e/`: Scripts de teste funcionais.
 - `cypress/support/pages/`: Implementação do Page Object Pattern.
-- `.github/workflows/`: (Opcional) Configuração de CI via GitHub Actions.
+- `.github/workflows/`: Configuração de CI via GitHub Actions.
