@@ -8,7 +8,7 @@ Projeto de automação de testes para a funcionalidade de busca do Blog do Agi, 
 
 ## 🚀 Instalação e Execução
 1. Clone o repositório:
-   `git clone [LINK_DO_SEU_REPO]`
+   `git clone git@github.com:GabiGomess/AgibankWeb.git`
 2. Instale as dependências:
    `npm install`
 3. Execute os testes em modo interface (GUI):
