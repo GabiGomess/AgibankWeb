@@ -1,0 +1,22 @@
+# Automação de Testes - Blog do Agi (QA Web)
+
+Projeto de automação de testes para a funcionalidade de busca do Blog do Agi, utilizando **Cypress** e o padrão **Page Objects**.
+
+## 🛠️ Pré-requisitos
+- Node.js instalado (v16 ou superior)
+- NPM ou Yarn
+
+## 🚀 Instalação e Execução
+1. Clone o repositório:
+   `git clone [LINK_DO_SEU_REPO]`
+2. Instale as dependências:
+   `npm install`
+3. Execute os testes em modo interface (GUI):
+   `npx cypress open`
+4. Execute os testes em modo headless (Terminal):
+   `npx cypress run`
+
+## 🏗️ Estrutura do Projeto
+- `cypress/e2e/`: Scripts de teste funcionais.
+- `cypress/support/pages/`: Implementação do Page Object Pattern.
+- `.github/workflows/`: (Opcional) Configuração de CI via GitHub Actions.
