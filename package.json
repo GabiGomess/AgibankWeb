@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cy:run:allure": "cypress run --env allure=true",
+    "allure:generate": "npx allure-commandline generate allure-results --clean",
+    "allure:open": "npx allure-commandline open allure-report"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +17,8 @@
     "cypress": "^15.12.0"
   },
   "devDependencies": {
+    "@shelex/cypress-allure-plugin": "^2.41.2",
+    "allure-mocha": "^3.6.0",
     "cypress-xpath": "^2.0.1"
   }
 }

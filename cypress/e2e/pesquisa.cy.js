@@ -1,3 +1,4 @@
+import '@shelex/cypress-allure-plugin';
 import PesquisaPage from '../support/pages/PesquisaPage';
 
 describe('Funcionalidade de Busca - Blog do Agi', () => {

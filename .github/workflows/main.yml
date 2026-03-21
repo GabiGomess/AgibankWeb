@@ -7,6 +7,15 @@ on:
     branches: [ main, master ]
   workflow_dispatch: 
 
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
@@ -22,10 +31,14 @@ jobs:
       - name: Instalar Dependências
         run: npm install
 
-      - name: Executar Testes do Cypress
-        uses: cypress-io/github-action@v6
-        with:
-          browser: chrome
+      - name: Instalar Allure Commandline
+        run: npm install -g allure-commandline
+
+      - name: Executar Testes do Cypress com Allure
+        run: npm run cy:run:allure
+
+      - name: Gerar Relatório Allure
+        run: npm run allure:generate
 
       - name: Salvar Artefatos em caso de falha
         uses: actions/upload-artifact@v4
@@ -33,3 +46,20 @@ jobs:
         with:
           name: cypress-screenshots
           path: cypress/screenshots
+
+      - name: Salvar Relatório Allure
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-report
+          path: allure-report/
+
+      - name: Configurar GitHub Pages
+        if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+        uses: actions/configure-pages@v4
+
+      - name: Publicar no GitHub Pages
+        if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: allure-report
