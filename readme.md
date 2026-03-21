@@ -16,6 +16,12 @@ Projeto de automação de testes para a funcionalidade de busca do Blog do Agi, 
 4. Execute os testes em modo headless (Terminal):
    `npx cypress run`
 
+Para gerar relatórios
+5. Execute os testes com allure
+   `npm run cy:run:allure && npm run allure:generate`
+6. Abra o relatório em uma aba do navegador
+   `npm run allure:open`
+
 ## 🏗️ Estrutura do Projeto
 - `cypress/e2e/`: Scripts de teste funcionais.
 - `cypress/support/pages/`: Implementação do Page Object Pattern.
