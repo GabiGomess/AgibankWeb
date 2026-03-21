@@ -1,1 +1,1 @@
-{"total":2,"items":[{"uid":"b691a7dd2ba18ec3a19aa17cf7a4d4dd","name":"pesquisa.cy.js","statistic":{"failed":0,"broken":4,"skipped":0,"passed":0,"unknown":0,"total":4}},{"uid":"a1effa5e0a15c0fb72c447aa31a34936","name":"Funcionalidade de Busca - Blog do Agi","statistic":{"failed":0,"broken":0,"skipped":0,"passed":2,"unknown":0,"total":2}}]}
+{"total":1,"items":[{"uid":"a1effa5e0a15c0fb72c447aa31a34936","name":"Funcionalidade de Busca - Blog do Agi","statistic":{"failed":0,"broken":0,"skipped":0,"passed":2,"unknown":0,"total":2}}]}

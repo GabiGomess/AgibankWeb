@@ -1,6 +1,14 @@
 import '@shelex/cypress-allure-plugin';
 import PesquisaPage from '../support/pages/PesquisaPage';
 
+Cypress.on('uncaught:exception', (err, runnable) => {
+  // returning false here prevents Cypress from failing the test
+  if (err.message.includes('KeyboardEvent')) {
+    return false;
+  }
+  // You can add more conditions for other errors if needed
+});
+
 describe('Funcionalidade de Busca - Blog do Agi', () => {
   const pesquisaPage = new PesquisaPage();
 

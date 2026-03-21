@@ -20,3 +20,19 @@ import 'cypress-xpath'
 Cypress.on('uncaught:exception', (err, runnable) => {
     return false;
 });
+
+Cypress.on('window:before:load', (win) => {
+  if (!win.KeyboardEvent) {
+    win.KeyboardEvent = function(type, eventInitDict) {
+      return new win.Event(type, eventInitDict);
+    };
+  }
+  // Polyfill KeyboardEvent on Event prototype
+  if (!win.Event.prototype.KeyboardEvent) {
+    Object.defineProperty(win.Event.prototype, 'KeyboardEvent', {
+      get: () => win.KeyboardEvent,
+      enumerable: true,
+      configurable: true
+    });
+  }
+});
